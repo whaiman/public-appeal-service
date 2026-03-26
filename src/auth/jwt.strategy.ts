@@ -22,6 +22,9 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(payload: JwtPayload) {
+    if (!payload || !payload.sub) {
+      throw new UnauthorizedException('JWT payload is missing or invalid');
+    }
     const user = await this.usersService.findById(payload.sub);
 
     if (!user) {

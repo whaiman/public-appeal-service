@@ -43,10 +43,16 @@ export class Appeal {
   @Column('text')
   description: string;
 
-  @Column({ /* type: 'enum', */ enum: AppealStatus, default: AppealStatus.PENDING })
+  @Column({
+    /* type: 'enum', */ enum: AppealStatus,
+    default: AppealStatus.PENDING,
+  })
   status: AppealStatus;
 
-  @Column({ /* type: 'enum', */ enum: AppealCategory, default: AppealCategory.OTHER })
+  @Column({
+    /* type: 'enum', */ enum: AppealCategory,
+    default: AppealCategory.OTHER,
+  })
   category: AppealCategory;
 
   @Column({

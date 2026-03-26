@@ -35,5 +35,4 @@ import { CacheModule } from './cache/cache.module';
     CacheModule,
   ],
 })
-
 export class AppModule {}
